@@ -8,7 +8,7 @@ Ensure your program can handle attempting to clear an already empty stack..
 import java.util.Scanner;
 import java.util.Stack;
 
-public class ReverseNumbersWithStack {
+public class Stack Clear Operation {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter the number of elements: ");// get the number of element from the user

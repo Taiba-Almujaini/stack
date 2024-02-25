@@ -4,16 +4,17 @@ Write functions for push and pop operations and ensure that
  your program can handle stack overflow and underflow conditions.
 */
 
+import java.util.Stack;
+
 public class Main {
     public static void main(String[] args) {
         int capacity = 10;
-        int[] stack = new int[capacity];
-        int top = -1;
+        Stack<Integer> stack = new Stack<>();
 
         // Push operation
         for (int i = 0; i < 11; i++) {
-            if (top < capacity - 1) {
-                stack[++top] = i;
+            if (stack.size() < capacity) {
+                stack.push(i);
                 System.out.println("Pushed " + i + " onto the stack.");
             } else {
                 System.out.println("Stack Overflow: Cannot push " + i + " onto a full stack.");
@@ -24,8 +25,8 @@ public class Main {
 
         // Pop operation
         for (int i = 0; i < 11; i++) {
-            if (top >= 0) {
-                int poppedItem = stack[top--];
+            if (!stack.isEmpty()) {
+                int poppedItem = stack.pop();
                 System.out.println("Popped " + poppedItem + " from the stack.");
             } else {
                 System.out.println("Stack Underflow: Cannot pop from an empty stack.");
